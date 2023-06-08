@@ -9,7 +9,7 @@ o2o文件夹为前台页面，使用原生的HTML+CSS+JS以及SUI Moblie做UI美
 
 ### superadmin
 
-superadmin为后台管理员页面，使用Vue.js+ElementUI开发，参考了此开源项目[vue-admin-template](https://github.com/tuture-dev/vue-admin-template)，如需要与后端交互，修改**.env.developement和.env.production**文件中的即可。
+superadmin为后台管理员页面，使用Vue.js+ElementUI开发，参考了此开源项目[vue-admin-template](https://github.com/tuture-dev/vue-admin-template)，如需要与后端交互，修改**.env.developement**和.**env.production**文件中的即可。
 
 #### 运行测试环境
 
