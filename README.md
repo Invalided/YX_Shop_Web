@@ -3,13 +3,13 @@ o2o校园商铺平台Web端，此项目为[YX_Shop](https://github.com/Invalided
 
 ## 配置说明
 
-### o2o
+## o2o
 
-o2o文件夹为前台页面，使用原生的HTML+CSS+JS以及SUI Moblie做UI美化， 导入IDE使用浏览器运行即可。如需要与后端交互，修改**js/common/loadpage.js**文件中的**VUE_APP_BASE_API**即可。
+o2o文件夹为前台页面，使用原生的HTML+CSS+JS以及SUI Moblie做UI美化， 导入IDE使用浏览器运行即可。如需要与后端交互，修改**o2o/js/common/loadpage.js**文件中的**serverUrl**配置即可。
 
-### superadmin
+## superadmin
 
-superadmin为后台管理员页面，使用Vue.js+ElementUI开发，参考了此开源项目[vue-admin-template](https://github.com/tuture-dev/vue-admin-template)，如需要与后端交互，修改**.env.developement**和.**env.production**文件中的即可。
+superadmin为后台管理员页面，使用Vue.js+ElementUI开发，参考了此开源项目[vue-admin-template](https://github.com/tuture-dev/vue-admin-template)，如需要与后端交互，修改 **superadmin/.env.developement** 和 **superadmin/.env.production**文件中的相关配置即可。
 
 #### 运行测试环境
 
