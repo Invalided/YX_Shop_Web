@@ -142,8 +142,7 @@ $(function() {
 			'.button',
 			function(e) {
 				// 页面判断
-				if(CurrentPath()){
-					console.log("true ",e.target.dataset.categoryId);
+				if(currentPath()){
 					parentId = e.target.dataset.categoryId;
 				}else{
 					if (parentId) {
@@ -189,12 +188,11 @@ $(function() {
 	});
 	
 	
-	function CurrentPath(){
+	function currentPath(){
 		// 获取当前url
 		var currentPath = window.location.pathname;
 		currentPath = currentPath.substring(currentPath.lastIndexOf("/")+1);
 		return currentPath == "shoplist.html";
-		console.log(currentPath);
 	}
 	
 	// 初始化页面
