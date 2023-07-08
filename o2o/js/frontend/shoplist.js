@@ -141,37 +141,30 @@ $(function() {
 			'click',
 			'.button',
 			function(e) {
-				if (parentId) {// 如果传递过来的是一个父类下的子类
-					shopCategoryId = e.target.dataset.categoryId;
-					// 若之前已选定了别的category,则移除其选定效果，改成选定新的
-					if ($(e.target).hasClass('button-fill')) {
-						$(e.target).removeClass('button-fill');
-						shopCategoryId = '';
-					} else {
-						$(e.target).addClass('button-fill').siblings()
-								.removeClass('button-fill');
-					}
-					// 由于查询条件改变，清空店铺列表再进行查询
-					$('.list-div').empty();
-					// 重置页码
-					pageNum = 1;
-					addItems(pageSize, pageNum);
-				} else {// 如果传递过来的父类为空，则按照父类查询
+				// 页面判断
+				if(CurrentPath()){
+					console.log("true ",e.target.dataset.categoryId);
 					parentId = e.target.dataset.categoryId;
-					if ($(e.target).hasClass('button-fill')) {
-						$(e.target).removeClass('button-fill');
-						parentId = '';
+				}else{
+					if (parentId) {
+						// 如果传递过来的是一个父类下的子类
+						shopCategoryId = e.target.dataset.categoryId;
 					} else {
-						$(e.target).addClass('button-fill').siblings()
-								.removeClass('button-fill');
+						// 如果传递过来的父类为空，则按照父类查询
+						parentId = e.target.dataset.categoryId;
 					}
-					// 由于查询条件改变，清空店铺列表再进行查询
-					$('.list-div').empty();
-					// 重置页码
-					pageNum = 1;
-					addItems(pageSize, pageNum);
 				}
-
+				if ($(e.target).hasClass('button-fill')) {
+					$(e.target).removeClass('button-fill');
+				} else {
+					$(e.target).addClass('button-fill').siblings()
+							.removeClass('button-fill');
+				}
+				$('.list-div').empty();
+				// 重置页码
+				pageNum = 1;
+				addItems(pageSize, pageNum);
+				
 			});
 
 	// 需要查询的店铺名字发生变化后，重置页码，清空原先的店铺列表，按照新的名字去查询
@@ -194,7 +187,16 @@ $(function() {
 	$('#me').click(function() {
 		$.openPanel('#panel-right-demo');
 	});
-
+	
+	
+	function CurrentPath(){
+		// 获取当前url
+		var currentPath = window.location.pathname;
+		currentPath = currentPath.substring(currentPath.lastIndexOf("/")+1);
+		return currentPath == "shoplist.html";
+		console.log(currentPath);
+	}
+	
 	// 初始化页面
 	$.init();
 });

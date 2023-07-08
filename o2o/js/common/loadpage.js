@@ -1,7 +1,6 @@
 // 后端服务器地址/Nginx地址
 var serverUrl = "http://localhost:8899";
 
-
 // 公共底部tab栏
 $(function(){
 	$("#bartab").load("../../html/common/foot.html");
